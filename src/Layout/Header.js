@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CART, HOME, SHOP } from "../DataPath/RouterLinks";
 import {
   AppBar,
-  Button,
+  
   IconButton,
   Toolbar,
   Box,
@@ -34,7 +34,7 @@ function Header() {
 
   return (
     <>
-      <AppBar position="sticky"  style={{ backgroundColor: "white" }}>
+      <AppBar position="sticky" className="bg-white header">
         <Toolbar>
           <Box
             className="ms-5 my-3"
@@ -48,7 +48,7 @@ function Header() {
               },
             }}
           >
-            <Link to={HOME} style={{ textDecoration: "none" }}>
+            <Link to={HOME} className="link">
               <p className="text-black">
                 <span className="d-flex align-items-center">
                   <ShoppingBagIcon sx={{ fontSize: 35 }} />
@@ -61,31 +61,19 @@ function Header() {
             className="me-5 "
             sx={{ display: { xs: "none", sm: "none", md: "none", lg: "flex" } }}
           >
-            <Link
-              to="/"
-              className="mx-4 my-3 fs-5 fw-medium"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to="/" className="mx-4 my-3 fs-5 fw-medium link">
               Home
             </Link>
-            <Link
-              to={SHOP}
-              className="mx-4 my-3 fs-5 fw-medium"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to={SHOP} className="mx-4 my-3 fs-5 fw-medium link">
               Shop
             </Link>
-            <Link
-              to={CART}
-              className="mx-4 my-3 fs-5 fw-medium"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to={CART} className="mx-4 my-3 fs-5 fw-medium link">
               Cart
             </Link>
             <p className="my-3 mx-2 text-black ">
               <AccountCircleIcon />
-            </p> 
-            <Link to={CART} style={{ textDecoration: "none", color: "black" }}>
+            </p>
+            <Link to={CART} className="link">
               <p color="inherit" className="my-3">
                 {/* <Badge badgeContent={cartdata.length} color="secondary">
                     <ShoppingCartIcon />
@@ -96,7 +84,7 @@ function Header() {
               </p>{" "}
             </Link>
           </Box>
-           <Box
+          <Box
             sx={{
               display: { xs: "flex", sm: "flex", md: "flex", lg: "none" },
               flexGrow: 1,
@@ -115,8 +103,7 @@ function Header() {
             >
               <MenuIcon />
             </IconButton>
-            <Link to={HOME} style={{ textDecoration: "none" }}>
-              {" "}
+            <Link to={HOME} className="link">
               <p className="text-black">
                 <span className="d-flex align-items-center">
                   <ShoppingBagIcon sx={{ fontSize: 28 }} />
@@ -124,9 +111,9 @@ function Header() {
                 </span>
               </p>
             </Link>
-          </Box> 
-        {/* responsive menu  */}
-           <Menu
+          </Box>
+          {/* responsive menu  */}
+          <Menu
             id="basic-menu"
             anchorEl={anchorEl}
             sx={{ display: { xs: "flex", sm: "flex", md: "flex", lg: "none" } }}
@@ -134,45 +121,40 @@ function Header() {
             onClose={handleClose}
             MenuListProps={{
               "aria-labelledby": "basic-button",
+              
             }}
+            className="header"
           >
             <MenuItem onClick={handleClose}>
-              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <Link to="/" className="link">
                 Home
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link
-                to={SHOP}
-                style={{ textDecoration: "none", color: "black" }}
-              >
+              <Link to={SHOP} className="link">
                 Shop
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link
-                to={CART}
-                style={{ textDecoration: "none", color: "black" }}
-              >
+              <Link to={CART} className="link">
                 CART
               </Link>
             </MenuItem>
-            
-          </Menu>  
+          </Menu>
           <Box
             sx={{ display: { xs: "flex", sm: "flex", md: "flex", lg: "none" } }}
           >
-            <Link style={{ textDecoration: "none", color: "black" }}>
+            <Link className="link">
               <p color="black" className="mx-3">
                 <AccountCircleIcon />
               </p>
             </Link>
-            <Link to={CART} style={{ textDecoration: "none", color: "black" }}>
+            <Link to={CART} className="link">
               <p color="black">
                 <ShoppingCartIcon />
               </p>
             </Link>
-          </Box> 
+          </Box>
         </Toolbar>
       </AppBar>
     </>

@@ -1,9 +1,47 @@
+ $DarkBlueColor:rgb(15,52,96);
+// $DarkBlueColor:rgb(29, 70, 120);
+$lightBlueColor:rgb(142, 158, 174);
 
 /* HEADER START */
 .header{
     .link{
         text-decoration: none;
+        color: black;
     }
     
 }
 /* HEADER ENDS */
+
+/* footer starts */
+.footer{
+    background-color: $DarkBlueColor;
+    color: white;
+    .text{
+        color:$lightBlueColor;
+    }
+.heights{
+    height: 5rem;
+    background-color: $DarkBlueColor;
+}
+
+    
+}
+/* footer ends */
+
+/* home start */
+.home{
+ 
+}
+/* home ends */
+
+/* componnet carousel start */
+.carousel{
+    .slider{
+        height: 30rem;
+    }
+    .title{
+        font-size: 5rem;
+        font-weight: bolder;
+    }
+}
+/* componnet carousel start */

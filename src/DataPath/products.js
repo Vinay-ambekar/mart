@@ -1,4 +1,4 @@
-import productImg01 from "../Images/double-sofa-01.png";
+ import productImg01 from "../Images/double-sofa-01.png";
 import productImg02 from "../Images/double-sofa-02.png";
 import productImg03 from "../Images/double-sofa-03.png";
 
@@ -31,21 +31,22 @@ import wireless03 from "../Images/wireless-03.png";
 import wireless04 from "../Images/wireless-04.png";
 
 import sofaSlide from "../Images/hero-img.png";
-import watchSlide from "../Images/watch-07.png";
+import watchSlide from "../Images/watch-07.png"; 
+
 
 export const SliderData = [
   {
       id: 1,
       title: "50% Off For Your First Shopping",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.",
-      cover: sofaSlide,
-  },
+       cover: sofaSlide,
+   },
   {
       id: 2,
       title: "50% Off For Your First Shopping",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.",
-      cover: phone08,
-  },
+       cover: phone08,
+   },
   {
       id: 3,
       title: "50% Off For Your First Shopping",
@@ -56,11 +57,11 @@ export const SliderData = [
       id: 4,
       title: "50% Off For Your First Shopping",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.",
-      cover: watchSlide,
-  },
+       cover: watchSlide,
+   },
 ];
 
-export const serviceData = [
+ export const serviceData = [
   {
     icon: <ion-icon name="car"></ion-icon>,
     title: "Free Shipping",
@@ -85,7 +86,7 @@ export const serviceData = [
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#d6e5fb",
   },
-];
+]; 
 
 export const discoutProducts = [
   {
@@ -813,4 +814,4 @@ export const products = [
     avgRating: 4.8,
   },
 
-];
+]; 
