@@ -1,7 +1,7 @@
  $DarkBlueColor:rgb(15,52,96);
 // $DarkBlueColor:rgb(29, 70, 120);
 $lightBlueColor:rgb(142, 158, 174);
-
+$graycolor:#f6f9fc;
 /* HEADER START */
 .header{
     .link{
@@ -37,11 +37,25 @@ $lightBlueColor:rgb(142, 158, 174);
 /* componnet carousel start */
 .carousel{
     .slider{
-        height: 30rem;
+        height: 36rem;
+        background-color:$graycolor;
     }
     .title{
-        font-size: 5rem;
-        font-weight: bolder;
+        font-size: 5vw;
+        font-weight: 500;
     }
+   
 }
-/* componnet carousel start */
+/* componnet carousel end */
+
+/* cards component start */
+.cards{
+    .cardWidth{
+        width: 20em;
+    }
+    .icons{        
+        border-radius: 100%;
+    }
+
+}
+/* cards component end */

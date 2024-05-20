@@ -28,7 +28,7 @@ const Carousels=({data})=>{
           {data.length>0? data.map((data) =>
             (
               <div key={data.id}>
-                <Paper className="slider">
+                <div className="slider ">
                   <div className="row mx-5">
                   <div className="col-xs-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center">
                    <div className="row">
@@ -36,15 +36,18 @@ const Carousels=({data})=>{
                     <p className="text-dark title">{data.title}</p>
                     </div>
                     <div className="col-12">
-                    <p >{data.desc}</p>
+                    <p>{data.desc}</p>
+                    <button className="btn btn-light">visit collection</button>
+
                     </div>
+
                    </div>
                   </div>
                   <div  className="col-xs-12 col-md-12 col-lg-6  d-flex justify-content-center align-items-center">
                   <img  className="img-fluid" src={data.cover} alt={data.title} />
                   </div>
                   </div>
-                </Paper>
+                </div>
               </div>
             )):<p>loadding...</p>}
         </Carousel>

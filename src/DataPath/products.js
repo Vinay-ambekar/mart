@@ -33,6 +33,11 @@ import wireless04 from "../Images/wireless-04.png";
 import sofaSlide from "../Images/hero-img.png";
 import watchSlide from "../Images/watch-07.png"; 
 
+/* icons */
+import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
+import PaymentIcon from '@mui/icons-material/Payment';
+import SecurityIcon from '@mui/icons-material/Security';
+import HeadphonesIcon from '@mui/icons-material/Headphones';
 
 export const SliderData = [
   {
@@ -63,25 +68,25 @@ export const SliderData = [
 
  export const serviceData = [
   {
-    icon: <ion-icon name="car"></ion-icon>,
+    icon: <DirectionsCarFilledIcon/>,
     title: "Free Shipping",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#fdefe6",
   },
   {
-    icon: <ion-icon name="card"></ion-icon>,
+    icon: <PaymentIcon/>,
     title: "Safe Payment",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#ceebe9",
   },
   {
-    icon: <ion-icon name="shield-half-outline"></ion-icon>,
+    icon: <SecurityIcon/>,
     title: "Secure Payment",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#e2f2b2",
   },
   {
-    icon: <ion-icon name="headset"></ion-icon>,
+    icon: <HeadphonesIcon/>,
     title: " Back Guarantee",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#d6e5fb",

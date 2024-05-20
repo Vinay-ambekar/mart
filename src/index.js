@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter } from 'react-router-dom';
 import './common.scss'
+import { IonIcon } from 'ionicons';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
