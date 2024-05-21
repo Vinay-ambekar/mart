@@ -20,7 +20,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function Header() {
-  console.log("shop:", SHOP);
+  // console.log("shop:", SHOP);
   const [anchorEl, setAnchorEl] = React.useState(null);
   /* const cartdata = useSelector((state) => state.cart); */
   //console.log('hedaer cartdata:',cartdata.length)

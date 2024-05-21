@@ -4,19 +4,21 @@ import Carousels from "../components/Carousels";
 import Cards from "../components/Cards";
 import AddIcon from '@mui/icons-material/Add';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import SingleCard from "../components/SingleCard";
 
 import {
   Card,
   CardContent,
   CardMedia,
   Rating,
-  Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const [getSliderData, setSliderData] = useState([]);
   /* let [slide,setslide]=useState(0) */
-  console.log(">>discount products", discoutProducts);
+  // console.log(">>discount products", discoutProducts);
   useEffect(() => {
     setSliderData(SliderData);
   }, []);
@@ -44,17 +46,19 @@ const Home = () => {
                         maxHeight: "50rem",
                         margin: "1rem auto",
                         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
+                
                       }}
+                      className="parentcard"
                     >
                       <div className="mx-3 mt-3 d-flex justify-content-between align-items-center">
                           <p className=" mt-2 px-3 rounded-4 discount">
                             {product.discount}%off
                           </p>
-                          <span className="hart">
+                          <span className="childcard">
                             <FavoriteBorderIcon/>
                           </span>
                         </div>
-                      {/* <Link className="z-3" to={`/${product.id}`}>  */}
+                      <Link className="z-3" to={`/${product.id}`}> 
                       <CardMedia
                         component="img"
                         sx={{
@@ -65,7 +69,7 @@ const Home = () => {
                         src={product.imgUrl}
                         alt="A Random picture found with the keyword Tokyo"
                       />
-                      {/* </Link> */}
+                      </Link>
                       <CardContent>
                         <p className="fs-4 fw-medium">{product.productName}</p>
                         <div>
@@ -104,7 +108,8 @@ const Home = () => {
                   className=" col-sm-12 col-md-6 col-lg-6 col-xl-4 "
                   key={product.id}
                 >
-                  <div>
+                  <SingleCard product={product}/>
+{/*                   <div>
                     <Card
                       sx={{
                         maxWidth: "30rem",
@@ -113,6 +118,7 @@ const Home = () => {
                         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
                       }}
                     >
+                    <Link className="z-3" to={`/${product.id}`}>
                       <CardMedia
                         component="img"
                         sx={{
@@ -123,7 +129,7 @@ const Home = () => {
                         src={product.imgUrl}
                         alt="A Random picture found with the keyword Tokyo"
                       />
-                      {/* </Link> */}
+                      </Link>
                       <CardContent>
                         <p className="fs-4 fw-medium">{product.productName}</p>
                         <div>
@@ -139,7 +145,7 @@ const Home = () => {
                         </div>
                       </CardContent>
                     </Card>
-                  </div>
+                  </div> */}
                 </div>
               ))
             ) : (
@@ -162,7 +168,8 @@ const Home = () => {
                   className=" col-sm-12 col-md-6 col-lg-6 col-xl-4 "
                   key={product.id}
                 >
-                  <div>
+                    <SingleCard product={product}/>
+                 {/*  <div>
                     <Card
                       sx={{
                         maxWidth: "30rem",
@@ -171,6 +178,7 @@ const Home = () => {
                         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
                       }}
                     >
+                     <Link className="z-3" to={`/${product.id}`}> 
                       <CardMedia
                         component="img"
                         sx={{
@@ -181,7 +189,7 @@ const Home = () => {
                         src={product.imgUrl}
                         alt="A Random picture found with the keyword Tokyo"
                       />
-                      {/* </Link> */}
+                      </Link>
                       <CardContent>
                         <p className="fs-4 fw-medium">{product.productName}</p>
                         <div>
@@ -197,7 +205,7 @@ const Home = () => {
                         </div>
                       </CardContent>
                     </Card>
-                  </div>
+                  </div> */}
                 </div>
               ))
             ) : (
@@ -210,6 +218,7 @@ const Home = () => {
           </div>
         </div>
         {/* Best sales end */}
+        
       </div>
     </>
   );

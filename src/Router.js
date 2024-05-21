@@ -1,9 +1,11 @@
 import { Routes,Route } from "react-router-dom"
-import { HOME, SHOP,CART } from "./DataPath/RouterLinks"
+import { HOME, SHOP,CART ,SingleProductS} from "./DataPath/RouterLinks"
 
 import Home from "./Pages/Home"
 import Cart from "./Pages/cart"
 import Shop from "./Pages/Shop"
+import SingleProduct from "./Pages/SingleProduct"
+
 const RouterNav=()=>{
     
     return(
@@ -13,6 +15,7 @@ const RouterNav=()=>{
             <Route path="/" element={<Home/>}/>
             <Route path={CART} element={<Cart/>}/>
             <Route path={SHOP} element={<Shop/>}/>
+            <Route path={SingleProductS} element={<SingleProduct />} />
         </Routes>
         </>
     )
