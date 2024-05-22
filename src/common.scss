@@ -31,32 +31,6 @@ $graycolor:#f6f9fc;
 /* home start */
 .home{
  /* best sels start*/
- /* .bestsels{
-    background-color: $graycolor;
-    .addproduct{
-        color: $DarkBlueColor;
-        border-radius: 50%;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  
-        transition: all 0.1s ease-in-out;
-        &:hover{
-            color: #fff;
-            background-color: $DarkBlueColor;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-        } 
-    }
-    .discount{
-        color: #fff;
-       
-        background-color: $DarkBlueColor;
-    }
-   .hart{
-    opacity: 0;
-    transition: all 0.1s ease-in-out;
-   }
-   &:hover.hart {
-    opacity: 1;
-    }
- } */
  .addproduct {
     color: $DarkBlueColor;
     border-radius: 50%;
@@ -145,8 +119,7 @@ $graycolor:#f6f9fc;
             color: #fff;
            }
     }
-      /* image container end */ 
-   
+    /* image container end */ 
 }
 /*header-image component ends  */
 
@@ -194,3 +167,77 @@ $graycolor:#f6f9fc;
     }
 }
 /* singlecard ends */
+
+/* dropdown option start */
+  .select-btn{
+    background-color: $DarkBlueColor;
+    color:white;
+    cursor: pointer;
+    width: 20rem;
+    border-radius: 10px;
+  }
+ 
+  .downarrow{
+border-left: 1px solid white;
+cursor: pointer;
+  }
+  ul{
+    cursor: pointer;
+    border: 1px solid $DarkBlueColor;
+    padding-left: 0; /* Removes the default padding */
+    margin-left: 0;
+    margin-top: 5px;
+    background-color: rgb(248, 248, 248);
+    width: 20rem;
+    position: absolute;
+    z-index: 1;
+   li{
+    list-style-type: none;
+    color: $DarkBlueColor;
+    padding-left: 1rem; /* Removes the default padding */
+    margin-left: 0;
+    padding-top:2px;
+    padding-bottom: 3px;
+    
+    &:hover{
+        color: #fff;
+        background-color: $DarkBlueColor;
+    }
+    &.selected { 
+        background-color: $DarkBlueColor;
+        color: #fff; 
+      }
+   }
+  }
+
+  /* dropdown option end*/
+  .selectSearch{
+    margin-top: -440px;
+  }
+
+  /* serch start */
+  .serch{
+    background-color:rgb(222, 222, 222);
+    color: gray;
+    border-radius: 20px;
+    input{
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        color:black;
+
+        background-color:rgb(222, 222, 222);
+    }
+ 
+
+  }
+  /* serch end */
+
+  /* cart page start */
+  .cartpage{
+    background-color: $graycolor;
+    .cartsummary{
+        color: $DarkBlueColor;
+    }
+  }
+  /* cart page end */
