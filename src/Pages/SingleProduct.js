@@ -5,12 +5,19 @@ import { Rating } from "@mui/material";
 
 import { useEffect, useState } from "react";
 import SingleCard from "../components/SingleCard";
+import { useDispatch } from 'react-redux'
+import {add} from '../Redux/redux'
 
 const SingleProduct =()=>{
     const [category,setcategory]=useState('')
     const [reviewtoggle,setreviewtoggle]=useState(false)
     const { id } = useParams();
     const item = products.find(item => item.id == parseInt(id));
+    const dispatch = useDispatch()
+    const handelAdd=()=>{
+        dispatch(add(item))
+       // console.log('added',add(product.title)) 
+      }
     useEffect(() => {
         setcategory(item.category);
         window.scrollTo(0, 0);
@@ -47,7 +54,7 @@ const SingleProduct =()=>{
                         <input className="form-control w-25" type="number" />
                     </div>
                     <div className="col-12 mb-5 d-flex align-items-center ">
-                        <button className="addbtocart">Add To Cart</button>
+                        <button onClick={handelAdd} className="addbtocart">Add To Cart</button>
                     </div>
                 </div>
             </div>

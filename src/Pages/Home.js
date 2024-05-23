@@ -2,17 +2,8 @@ import { useEffect, useState } from "react";
 import { SliderData, discoutProducts,products } from "../DataPath/products";
 import Carousels from "../components/Carousels";
 import Cards from "../components/Cards";
-import AddIcon from '@mui/icons-material/Add';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import SingleCard from "../components/SingleCard";
-
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Rating,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+import DiscountCard from "../components/DiscountCards";
 
 
 const Home = () => {
@@ -35,7 +26,7 @@ const Home = () => {
           <p className="text-center text-dark my-5 fs-1 fw-medium"> Big Discount</p>
             {discoutProducts.length > 0 ? (
               discoutProducts.map((product) => (
-                <div
+               /*  <div
                   className=" col-sm-12 col-md-6 col-lg-6 col-xl-4 "
                   key={product.id}
                 >
@@ -86,6 +77,12 @@ const Home = () => {
                       </CardContent>
                     </Card>
                   </div>
+                </div> */
+                <div
+                  className=" col-sm-12 col-md-6 col-lg-6 col-xl-4 "
+                  key={product.id}
+                >
+                <DiscountCard product={product}/>
                 </div>
               ))
             ) : (

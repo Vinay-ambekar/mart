@@ -1,10 +1,8 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-/*import { useSelector } from "react-redux";*/
 import { CART, HOME, SHOP } from "../DataPath/RouterLinks";
 import {
   AppBar,
-  
   IconButton,
   Toolbar,
   Box,
@@ -18,9 +16,13 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useSelector } from "react-redux";
+
 
 function Header() {
   // console.log("shop:", SHOP);
+  const cartdata = useSelector((state) => state.cart.items);
+  console.log('cardata.length',cartdata)
   const [anchorEl, setAnchorEl] = React.useState(null);
   /* const cartdata = useSelector((state) => state.cart); */
   //console.log('hedaer cartdata:',cartdata.length)
@@ -74,14 +76,12 @@ function Header() {
               <AccountCircleIcon />
             </p>
             <Link to={CART} className="link">
-              <p color="inherit" className="my-3">
-                {/* <Badge badgeContent={cartdata.length} color="secondary">
-                    <ShoppingCartIcon />
-                  </Badge> */}
-                <Badge color="secondary">
-                  <ShoppingCartIcon />
-                </Badge>
-              </p>{" "}
+              <p className="my-3 ms-2">
+                <Badge badgeContent={cartdata.length} 
+                className="badgeColor">
+                    <ShoppingCartIcon  />
+                  </Badge>
+              </p>
             </Link>
           </Box>
           <Box
@@ -123,9 +123,9 @@ function Header() {
               "aria-labelledby": "basic-button",
               
             }}
-            className="header"
+            className="header mt-2"
           >
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={handleClose} className="mt-2">
               <Link to="/" className="link">
                 Home
               </Link>
@@ -142,7 +142,8 @@ function Header() {
             </MenuItem>
           </Menu>
           <Box
-            sx={{ display: { xs: "flex", sm: "flex", md: "flex", lg: "none" } }}
+            sx={{ display: { xs: "flex", sm: "flex", md: "flex", lg: "none" }}}
+            className='mt-2'
           >
             <Link className="link">
               <p color="black" className="mx-3">
@@ -151,7 +152,10 @@ function Header() {
             </Link>
             <Link to={CART} className="link">
               <p color="black">
-                <ShoppingCartIcon />
+              <Badge badgeContent={cartdata.length} 
+                className=" badgeColor">
+                    <ShoppingCartIcon  />
+                  </Badge>
               </p>
             </Link>
           </Box>

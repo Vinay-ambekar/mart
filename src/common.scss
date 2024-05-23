@@ -7,8 +7,14 @@ $graycolor:#f6f9fc;
     .link{
         text-decoration: none;
         color: black;
+      
     }
-    
+    .badgeColor {
+        .MuiBadge-badge {
+          background-color:$DarkBlueColor;
+          color: white;
+        }
+      }
 }
 /* HEADER ENDS */
 
@@ -36,6 +42,7 @@ $graycolor:#f6f9fc;
     border-radius: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.1s ease-in-out;
+    cursor: pointer;
 
     &:hover {
       color: #fff;
@@ -236,8 +243,21 @@ cursor: pointer;
   /* cart page start */
   .cartpage{
     background-color: $graycolor;
+    height: auto;
     .cartsummary{
         color: $DarkBlueColor;
     }
+   .addbutton{
+    border: 2px solid #f6f9fc;
+    background-color: white;
+    color: $DarkBlueColor;
+   }
+   .remove{
+    border: 2px solid white;
+    background-color: #f6f9fc;
+   }
+   .quantitypirce{
+    color: gray;
+   }
   }
   /* cart page end */
