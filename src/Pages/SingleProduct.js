@@ -1,3 +1,5 @@
+//single product .js
+
 import { useParams } from "react-router-dom";
 import { products } from "../DataPath/products";
 import Headerimage from "../components/Headerimage";
@@ -9,14 +11,16 @@ import { useDispatch } from 'react-redux'
 import {add} from '../Redux/redux'
 
 const SingleProduct =()=>{
-    const [category,setcategory]=useState('')
+    const [category,setcategory]=useState(1)
     const [reviewtoggle,setreviewtoggle]=useState(false)
+    const [quantity, setQuantity] = useState(1); 
+    
+    console.log('shoppage input value>>',quantity)
     const { id } = useParams();
     const item = products.find(item => item.id == parseInt(id));
     const dispatch = useDispatch()
     const handelAdd=()=>{
-        dispatch(add(item))
-       // console.log('added',add(product.title)) 
+        dispatch(add(item,quantity))
       }
     useEffect(() => {
         setcategory(item.category);
@@ -25,6 +29,12 @@ const SingleProduct =()=>{
     const toggleview=()=>{
         setreviewtoggle(!reviewtoggle)
     }
+    // Initial value can be empty
+
+  const handleChange = (event) => {
+    const newValue = parseInt(event.target.value); 
+    setQuantity(newValue >= 1 ? newValue : 1); 
+  };
     return(
         <>
         <Headerimage productname={item.productName}/>
@@ -51,7 +61,7 @@ const SingleProduct =()=>{
                         <p> {item.shortDesc} </p>
                     </div>
                     <div className="col-12 mb-5 d-flex align-items-center ">
-                        <input className="form-control w-25" type="number" />
+                        <input value={quantity} onChange={handleChange} className="form-control w-25" type="number" />
                     </div>
                     <div className="col-12 mb-5 d-flex align-items-center ">
                         <button onClick={handelAdd} className="addbtocart">Add To Cart</button>
@@ -86,43 +96,6 @@ const SingleProduct =()=>{
                   key={product.id}
                 >
                  <SingleCard product={product}/>
-                  {/* <div>
-                    <Card
-                      sx={{
-                        maxWidth: "30rem",
-                        maxHeight: "50rem",
-                        margin: "1rem auto",
-                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
-                      }}
-                    >
-                     <Link className="z-3" to={`/${product.id}`}> 
-                      <CardMedia
-                        component="img"
-                        sx={{
-                          height: 200,
-                          objectFit: "contain",
-                          margin: "0.5rem",
-                        }}
-                        src={product.imgUrl}
-                        alt="A Random picture found with the keyword Tokyo"
-                      />
-                      </Link>
-                      <CardContent>
-                        <p className="fs-4 fw-medium">{product.productName}</p>
-                        <div>
-                          <Rating name="read-only" value={+product.reviews[0].rating} readOnly />
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <p className="fs-3 fw-bold mt-2">
-                            {product.price}$
-                          </p>
-                          <span className="p-2 addproduct">
-                            <AddIcon/>
-                          </span>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div> */}
                 </div>
               ))
             ) : (

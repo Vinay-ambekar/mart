@@ -1,24 +1,55 @@
+ //cart page
 import { useDispatch, useSelector } from "react-redux";
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { remove, incrementQuantity, decrementQuantity } from '../Redux/redux';
+import { remove } from '../Redux/redux';
+import { useState, useEffect } from "react";
 
 const Cart = () => {
     const cartData = useSelector((state) => state.cart.items);
-    const quantities = useSelector((state) => state.cart.quantities);
     const dispatch = useDispatch();
 
+    const [quantities, setQuantities] = useState({});
+    // const [increment,setincrement]=useState({})
+    // const [decrement,setdecrement]=useState({})
+    // console.log('incremented quatie',increment)
+    // console.log('decrement quantit',decrement)
+    // console.log('quantities>>',quantities)
+    
+    useEffect(() => {
+        // Initialize quantities state based on cartData
+        const initialQuantities = cartData.reduce((acc, item) => {
+            acc[item.id] = 1;
+            return acc;
+        }, {});
+        setQuantities(initialQuantities);
+        console.log('initialQuantities>>',initialQuantities)
+    }, []);
+
+  
     const handleItemRemove = (id) => {
         dispatch(remove(id));
+        setQuantities((prev) => {
+            const newQuantities = { ...prev };
+            delete newQuantities[id];
+            return newQuantities;
+        });
     };
 
     const handleIncrement = (id) => {
-        dispatch(incrementQuantity(id));
+        setQuantities((prev) => ({
+            ...prev,
+            [id]: parseFloat(prev[id] + 1),
+        
+        }));
     };
 
     const handleDecrement = (id) => {
-        dispatch(decrementQuantity(id));
+        setQuantities((prev) => ({
+            ...prev,
+            [id]: prev[id] > 1 ? prev[id] - 1 : 1,
+        }));
     };
 
     const calculateTotalPrice = () => {

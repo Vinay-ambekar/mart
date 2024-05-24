@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {add} from '../Redux/redux'
 
-
-
 const DiscountCard = (props) => {
     const product=props.product
     const dispatch = useDispatch()
@@ -17,7 +15,6 @@ const DiscountCard = (props) => {
   
   return (
     <>
-      
         <div className='bestsels'>
           <Card
             sx={{
