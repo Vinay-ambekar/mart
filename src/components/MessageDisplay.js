@@ -21,13 +21,13 @@ const MessageDisplay = () => {
 
   return (
     <div className='position-fixed d-flex z-3 fs-4'>
-      {message.includes('is already in the cart.')? (
+     {/*  {message.includes('is already in the cart.')? (
         <>
         <Alert variant="filled" severity="warning">
             {message}
         </Alert>
         </>
-      ) : (
+      ) : ( */}{(
         message.length>0?(
             <>
         <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">

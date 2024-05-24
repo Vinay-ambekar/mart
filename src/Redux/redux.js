@@ -14,10 +14,23 @@ const CartSlice = createSlice({
             const existingProductIndex = state.items.findIndex(item => item.id === action.payload.id);
             if (existingProductIndex === -1) {
                 state.items.push(action.payload);
-                state.quantities[action.payload.id] = 1; // Initialize quantity for the new item
+                state.quantities[action.payload.id] = 1;
                 state.message = `${action.payload.productName} is added to cart`;
             } else {
-                state.message = `${action.payload.productName} is already in the cart.`;
+                state.message = `${action.payload.productName} is added to cart`;
+                state.quantities[action.payload.id] += 1;
+            }
+        },
+        addWithQuantity(state, action) {
+            const { item, quantity } = action.payload;
+            const existingProductIndex = state.items.findIndex(existingItem => existingItem.id === item.id);
+            if (existingProductIndex === -1) {
+                state.items.push(item);
+                state.quantities[item.id] = quantity;
+                state.message = `${item.productName} is added to cart`;
+            } else {
+                state.message = `${item.productName} is already in the cart`;
+                state.quantities[item.id] += quantity;
             }
         },
         clearMessage(state) {
@@ -40,5 +53,5 @@ const CartSlice = createSlice({
     }
 });
 
-export const { add, clearMessage, remove, incrementQuantity, decrementQuantity } = CartSlice.actions;
+export const { add, addWithQuantity, clearMessage, remove, incrementQuantity, decrementQuantity } = CartSlice.actions;
 export default CartSlice.reducer;
