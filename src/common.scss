@@ -262,6 +262,18 @@ cursor: pointer;
       color:$DarkBlueColor;
      }
    }
+   .cursor-pointer{
+    cursor: pointer;
+   }
    
   }
   /* cart page end */
+
+  @media (min-width: 1008px) {
+   .productcart{
+    height: 15rem;
+    img{
+      width: 10rem;
+    }
+   }
+  }

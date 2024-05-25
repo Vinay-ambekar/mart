@@ -37,10 +37,10 @@ const Cart = () => {
                             cartData.map((data) => (
                                 <div key={data.id} className="card py-2 d-flex pb-3 mb-3 productcart">
                                     <span className="text-end me-2">
-                                        <CloseIcon onClick={() => handleItemRemove(data.id)} className="fs-2 fw-bold" />
+                                        <CloseIcon onClick={() => handleItemRemove(data.id)} className="fs-2 fw-bold cursor-pointer" />
                                     </span>
-                                    <div className="row d-flex p-3 align-items-end">
-                                        <div className="col-8">
+                                    <div className="row d-flex justify-content-start p-3 align-items-end">
+                                        <div className="col-lg-9">
                                             <div className="row px-3 d-flex align-items-center">
                                                 <div className="col-xs-12 col-md-12 col-lg-4">
                                                     <img className="img-fluid" src={data.imgUrl} alt="image" />
@@ -55,9 +55,10 @@ const Cart = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-2 d-flex mb-5 ms-5">
-                                            <AddIcon onClick={() => handleIncrement(data.id)} className="fs-1 me-1 addbutton" />
-                                            <RemoveIcon onClick={() => handleDecrement(data.id)} className="fs-1 remove" />
+                                         {/* + - buttons */}
+                                        <div className="col-lg-1 d-flex mb-2 ms-5">
+                                            <AddIcon onClick={() => handleIncrement(data.id)} className="fs-1 me-1 mt-5 addbutton cursor-pointer" />
+                                            <RemoveIcon onClick={() => handleDecrement(data.id)} className="fs-1 mt-5 remove cursor-pointer" />
                                         </div>
                                     </div>
                                 </div>
