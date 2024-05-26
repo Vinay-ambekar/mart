@@ -22,7 +22,7 @@ import { useSelector } from "react-redux";
 function Header() {
   // console.log("shop:", SHOP);
   const cartdata = useSelector((state) => state.cart.items);
-  console.log('cardata.length',cartdata)
+  // console.log('cardata.length',cartdata)
   const [anchorEl, setAnchorEl] = React.useState(null);
   /* const cartdata = useSelector((state) => state.cart); */
   //console.log('hedaer cartdata:',cartdata.length)
