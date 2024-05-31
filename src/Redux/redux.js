@@ -38,7 +38,7 @@ const CartSlice = createSlice({
         },
         remove(state, action) {
             state.items = state.items.filter(item => item.id !== action.payload);
-            delete state.quantities[action.payload]; // Remove the quantity entry
+            // delete state.quantities[action.payload]; // Remove the quantity entry
         },
         incrementQuantity(state, action) {
             if (state.quantities[action.payload] !== undefined) {
